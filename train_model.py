@@ -3,11 +3,11 @@ from sklearn import svm
 import pickle
 import numpy as np
 
-train_data = get_images('train-images-idx3-ubyte/train-images.idx3-ubyte', length=50000)
-train_labels = get_labels('train-labels-idx1-ubyte/train-labels.idx1-ubyte')
+train_data = get_images('Input_Data/train-images-idx3-ubyte/train-images.idx3-ubyte', length=50000)
+train_labels = get_labels('Input_Data/train-labels-idx1-ubyte/train-labels.idx1-ubyte')
 
 clf = svm.SVC()
-train_data = np.asmatrix(train_data[:(50000*784)]).reshape(50000, 784)
+train_data = np.asarray(train_data[:(50000*784)]).reshape(50000, 784)
 
 clf.fit(train_data, train_labels[:50000])
 
